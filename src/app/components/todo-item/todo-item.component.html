@@ -1,0 +1,21 @@
+<div
+  [ngClass]="{ 'bg-green-300': todo.isCompleted }"
+  class="flex items-center justify-between px-3 py-2 border"
+>
+  <div class="flex items-center gap-2">
+    <input
+      type="checkbox"
+      (click)="checkTodo(todo.id)"
+      [checked]="todo.isCompleted"
+    />
+    <p>{{ todo.name }}</p>
+  </div>
+  <div class="flex items-center gap-8">
+    <p class="text-sm">Created At {{ todo.createdAt }}</p>
+    <a
+      (click)="removeTodo(todo.id)"
+      class="bg-red-500 px-3 py-1 rounded-sm cursor-pointer text-white"
+      >x</a
+    >
+  </div>
+</div>
